@@ -1,12 +1,9 @@
-from abc import ABC
+import requests
 
 
-class AbstractApi(ABC):
-    url: str
-
+class Api:
     def __init__(self, url):
         self.url = url
 
-
-class Api(AbstractApi):
-    pass
+    def request(self, **kwargs) -> dict:
+        return requests.get(self.url, params=kwargs).json()
