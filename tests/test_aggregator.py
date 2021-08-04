@@ -36,7 +36,7 @@ class TestAggregatorInterface:
         },
     }
 
-    def test_create_aggregator(self, mock_request):
+    def test_aggregator(self, mock_request):
         for url, response in self.urls.items():
             mock_request(url, response)
         apis = [Api(url) for url in self.urls.keys()]
