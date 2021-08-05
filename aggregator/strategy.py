@@ -8,7 +8,7 @@ class Strategy(ABC):
         raise NotImplementedError
 
 
-class AverageStrategy:
+class AverageStrategy(Strategy):
     def compute(self, elements: list[dict]) -> dict:
         result = {}
         for element in elements:
